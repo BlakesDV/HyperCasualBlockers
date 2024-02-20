@@ -1,0 +1,54 @@
+{
+    "name": "BasicMovement",
+    "maps": [
+        {
+            "name": "Movement",
+            "id": "62455325-33d7-40bc-b1a6-c0370592977f",
+            "actions": [
+                {
+                    "name": "Up",
+                    "type": "Value",
+                    "id": "9f08168f-6f93-4d6b-aae7-d0b1109c9534",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Down",
+                    "type": "Value",
+                    "id": "fdbcac8c-ef2e-466c-baa0-06ac16acc7d4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c0b8dd8c-c524-4e2f-8115-fe1052c17fbd",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Up",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "17c867ed-848c-47a6-9d54-9ed1f17a8a79",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
