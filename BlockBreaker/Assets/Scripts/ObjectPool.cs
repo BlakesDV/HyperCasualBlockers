@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//ref tutorial https://www.youtube.com/watch?v=1nts5v-p5lQ
 public class ObjectPool : MonoBehaviour
 {
     public GameObject prefab;

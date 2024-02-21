@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+//script realizado con referencia a chatgpt y tutorial https://www.youtube.com/watch?v=vKblj0tyG3o
 public class LvlController : MonoBehaviour
 {
     public static LvlController instance;
