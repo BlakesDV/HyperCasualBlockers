@@ -7,6 +7,10 @@ public class ObjectPool : MonoBehaviour
     public GameObject prefab;
     public int amount;
 
+    public float minX, minY, maxX, maxY;
+    public float coolDown;
+    public float spawnTime;
+
     public GameObject[] prefabs;
 
     private int index;
@@ -25,6 +29,15 @@ public class ObjectPool : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        if(Time.time > spawnTime)
+        {
+            Spawn();
+            spawnTime = Time.time + coolDown;
+        }
+    }
+
     public GameObject GetObject()
     {
 
@@ -37,5 +50,13 @@ public class ObjectPool : MonoBehaviour
         prefabs[index].SetActive(true);
 
         return prefabs[index];
+    }
+
+    void Spawn()
+    {
+        float randomX = Random.Range(minX, maxX);
+        float randomY = Random.Range(minY, maxY);
+
+        Instantiate(prefab, transform.position + new Vector3(randomX, randomY, 0), transform.rotation);
     }
 }

@@ -8,19 +8,15 @@ public class LvlController : MonoBehaviour
 {
     public static LvlController instance;
 
-    public Text pointsText;
-
-    public GameObject gamePanel;
-    public GameObject startPanel;
-    public GameObject gameOverPanel;
-
     public float gameSpeed = 2;
+
+    public float cameraSpeed;
 
     public int obstaclesAmount = 6;
 
     public float damageTime = 0.1f;
 
-    public Color easyColor, mediumColor, hardColor;
+    //public Color easyColor, mediumColor, hardColor;
 
     public float obstaclesDistance = 13;
 
@@ -29,8 +25,6 @@ public class LvlController : MonoBehaviour
 
     public float multiplier = 1;
     public float cicleTime = 10;
-
-    public AudioClip clickSound;
 
     public bool gameOver = true;
 
@@ -43,11 +37,10 @@ public class LvlController : MonoBehaviour
         instance = this;
     }
 
-    // Use this for initialization
     IEnumerator Start()
     {
 
-        player = FindObjectOfType<Player>().transform;
+        player = FindObjectOfType<PlayerController>().transform;
 
         while (gameOver)
         {
@@ -63,14 +56,12 @@ public class LvlController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        transform.position += new Vector3(cameraSpeed * Time.deltaTime, 0, 0);
     }
 
     public void StartGame()
     {
-        AudioSource.PlayClipAtPoint(clickSound, Camera.main.transform.position);
-        gamePanel.SetActive(true);
-        startPanel.SetActive(false);
+        
         gameOver = false;
     }
 
@@ -78,7 +69,6 @@ public class LvlController : MonoBehaviour
     {
         gameOver = true;
         gameSpeed = 0;
-        gameOverPanel.SetActive(true);
     }
 
     public void ReloadScene()
@@ -89,8 +79,6 @@ public class LvlController : MonoBehaviour
     public void Score(int amount)
     {
         points += amount;
-
-        pointsText.text = points.ToString();
     }
 
     void IncreaseDifficulty()
